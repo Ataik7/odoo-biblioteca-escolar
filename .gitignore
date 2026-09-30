@@ -1,0 +1,9 @@
+# Caché de Python
+__pycache__/
+*.py[cod]
+
+# Configuración local (contiene contraseñas y la clave de Google Books)
+odoo/config/odoo.conf
+
+# Configuración del editor
+.vscode/

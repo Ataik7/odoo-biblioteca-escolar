@@ -1,0 +1,99 @@
+/* ========================================================
+   ESTILOS PERSONALIZADOS - MÓDULO BIBLIOTECA
+   ======================================================== */
+
+/* --- 1. CABECERA: TÍTULO Y NOMBRE DEL USUARIO --- */
+.oe_title {
+    max-width: 70% !important;
+    width: 70% !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+    margin-bottom: 20px !important;
+    border-bottom: 1px solid #dee2e6 !important; /* Línea divisoria estilo Odoo */
+    padding-bottom: 8px !important;
+}
+
+.oe_title label {
+    display: block !important;
+    margin-bottom: 2px !important;
+    font-weight: bold !important;
+    color: #495057 !important;
+    font-size: 1rem !important;
+}
+
+/* Ajuste para campos H1 (Nombre/Título) en edición y lectura */
+.oe_title h1, 
+.oe_title h1 input, 
+.oe_title h1 .o_field_widget, 
+.oe_title h1 span {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    line-height: 1.2 !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: 1.75rem !important;
+    color: #212529 !important;
+}
+
+/* --- 2. GESTIÓN DE IMÁGENES (PORTADAS Y AVATARES) --- */
+.o_field_image.o_book_cover, 
+.oe_avatar {
+    float: right !important;
+    position: relative !important;
+    margin-left: 15px !important;
+    margin-bottom: 10px !important;
+    max-width: 200px !important;
+}
+
+.o_field_image.o_book_cover img, 
+.oe_avatar img {
+    width: 200px !important;
+    max-width: 200px !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 4px;
+}
+
+/* --- 3. MAQUETACIÓN DEL FORMULARIO (SHEET) --- */
+/* Reducir espacios innecesarios entre título y grupos de datos */
+.o_form_sheet > .oe_title + div,
+.o_form_sheet > .oe_title + .o_group {
+    margin-top: 5px !important;
+    clear: none !important;
+}
+
+.o_form_sheet > .o_group {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Resetear el flujo al final de los grupos principales */
+.o_form_sheet > .o_group:last-of-type {
+    clear: both !important;
+}
+
+/* --- 4. TABLAS DE PRÉSTAMOS (SOLUCIÓN DE COLUMNAS) --- */
+/* Forzar que los encabezados no se corten ("Fecha de...") */
+.o_list_table th {
+    white-space: nowrap !important;
+    min-width: 120px !important; 
+}
+
+/* En Ficha de USUARIO: Expandir columna del Libro */
+.o_field_widget[name="loan_ids"] .o_list_table th[data-name="book_id"],
+.o_field_widget[name="loan_ids"] .o_list_table td[name="book_id"] {
+    width: 100% !important;
+}
+
+/* En Ficha de LIBRO: Expandir columna del Usuario */
+.o_field_widget[name="loan_ids"] .o_list_table th[data-name="user_id"],
+.o_field_widget[name="loan_ids"] .o_list_table td[name="user_id"] {
+    width: 100% !important;
+}
+
+/* Asegurar comportamiento fluido de la tabla */
+.o_list_table {
+    table-layout: auto !important;
+    width: 100% !important;
+}

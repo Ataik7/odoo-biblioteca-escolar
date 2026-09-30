@@ -1,0 +1,154 @@
+<odoo>
+    <!-- Vista de formulario -->
+    <record id="view_form_library_user" model="ir.ui.view">
+        <field name="name">library.user.form</field>
+        <field name="model">png_biblioteca.user</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_loans" string="Ver Préstamos" type="object"
+                            class="oe_stat_button" icon="fa-list">
+                            <field name="active_loans_count" widget="statinfo" string="Activos" />
+                        </button>
+                        <button name="action_view_loans" type="object" class="oe_stat_button"
+                            icon="fa-exclamation-triangle" invisible="overdue_loans_count == 0">
+                            <field name="overdue_loans_count" widget="statinfo" string="Vencidos" />
+                        </button>
+                        <button name="action_view_loans" type="object" class="oe_stat_button"
+                            icon="fa-history">
+                            <field name="total_loans_count" widget="statinfo" string="Total" />
+                        </button>
+                    </div>
+
+                    <field name="image" widget="image" class="oe_avatar o_book_cover"
+                        options='{"preview_image": "image_128"}' />
+
+                    <div class="oe_title">
+                        <label for="name" string="Nombre del Usuario" />
+                        <h1>
+                            <field name="name" placeholder="Ej. Iván..." required="1" />
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="Identificación y Contacto">
+                            <field name="library_card" placeholder="Ej: LIB-2025-001"
+                                help="Número de identificación único del usuario." />
+                            <field name="user_type"
+                                help="Tipo de categoría del usuario de la biblioteca." />
+                            <field name="email" placeholder="ejemplo@correo.com" />
+                            <field name="full_info" readonly="1"
+                                help="Información completa y metadatos del usuario." />
+                        </group>
+                        <group string="Estadísticas de Préstamos">
+                            <field name="active_loans_count"
+                                help="Cantidad de libros que el usuario tiene actualmente." />
+                            <field name="overdue_loans_count"
+                                help="Cantidad de libros con fecha de devolución vencida." />
+                            <field name="total_loans_count"
+                                help="Historial total de libros prestados a este usuario." />
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Préstamos">
+                            <field name="loan_ids">
+                                <tree widths="40,20,20,20">
+                                    <field name="book_id" />
+                                    <field name="loan_date" />
+                                    <field name="return_date" />
+                                    <field name="state"
+                                        widget="badge"
+                                        decoration-info="state == 'ongoing'"
+                                        decoration-success="state == 'returned'"
+                                        decoration-danger="state == 'overdue'" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- Chatter -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de lista -->
+    <record id="view_tree_library_user" model="ir.ui.view">
+        <field name="name">library.user.tree</field>
+        <field name="model">png_biblioteca.user</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="user_type" />
+                <field name="library_card" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Kanban -->
+    <record id="view_library_user_kanban" model="ir.ui.view">
+        <field name="name">png.biblioteca.user.kanban</field>
+        <field name="model">png_biblioteca.user</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="user_type" class="o_kanban_small_column">
+                <field name="id" />
+                <field name="name" />
+                <field name="user_type" />
+                <field name="library_card" />
+                <field name="email" />
+                <field name="active_loans_count" />
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click" style="padding: 12px;">
+                            <div style="display: flex; align-items: flex-start; gap: 15px;">
+
+                                <img
+                                    t-att-src="kanban_image('png_biblioteca.user', 'image', record.id.raw_value)"
+                                    alt="Avatar"
+                                    style="width: 90px; height: 90px; border-radius: 4px; object-fit: cover; flex-shrink: 0;" />
+
+                                <div style="flex: 1; min-width: 0;">
+                                    <!-- Nombre -->
+                                    <strong
+                                        style="font-size: 16px; display: block; margin-bottom: 6px; color: #212529;">
+                                        <field name="name" />
+                                    </strong>
+
+                                    <div
+                                        style="font-size: 13px; color: #6c757d; margin-bottom: 10px;"
+                                        t-if="record.email.value">
+                                        <field name="email" />
+                                    </div>
+
+                                    <div
+                                        style="font-size: 12px; color: #6c757d; margin-bottom: 8px;">
+                                        <i class="fa fa-id-card" title="Número de Carnet" />
+                                        <field name="library_card" />
+                                    </div>
+
+                                    <div>
+                                        <span class="badge badge-pill"
+                                            t-attf-class="#{record.active_loans_count.raw_value > 0 ? 'text-bg-warning' : 'text-bg-success'}"
+                                            style="font-size: 11px; padding: 4px 8px;">
+                                            <i class="fa fa-book" />
+                                                <t
+                                                t-esc="record.active_loans_count.value" />
+                                            préstamo(s) </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

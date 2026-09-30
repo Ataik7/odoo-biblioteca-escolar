@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="cron_update_overdue_loans" model="ir.cron">
+            <field name="name">Biblioteca: Actualizar Préstamos Vencidos</field>
+            <field name="model_id" ref="model_png_biblioteca_loan_cron" />
+            <field name="state">code</field>
+            <field name="code">model.update_overdue_loans()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True" />
+            <field name="doall" eval="False" />
+        </record>
+
+        <record id="cron_send_loan_reminders" model="ir.cron">
+            <field name="name">Biblioteca: Enviar Recordatorios de Devolución</field>
+            <field name="model_id" ref="model_png_biblioteca_loan_cron" />
+            <field name="state">code</field>
+            <field name="code">model.send_due_soon_reminders()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True" />
+            <field name="doall" eval="False" />
+        </record>
+
+    </data>
+</odoo>

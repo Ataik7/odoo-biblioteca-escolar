@@ -1,0 +1,69 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_loan_job_tree" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.job.tree</field>
+        <field name="model">png_biblioteca.loan.job</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" decoration-danger="state == 'failed'">
+                <field name="execution_date"/>
+                <field name="name"/>
+                <field name="records_count"/>
+                <field name="result_message"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'done'"
+                       decoration-danger="state == 'failed'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_loan_job_form" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.job.form</field>
+        <field name="model">png_biblioteca.loan.job</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="execution_date"/>
+                        </group>
+                        <group>
+                            <field name="state" widget="badge"
+                                   decoration-success="state == 'done'"
+                                   decoration-danger="state == 'failed'"/>
+                            <field name="records_count"/>
+                        </group>
+                    </group>
+                    <group string="Resultado">
+                        <field name="result_message" nolabel="1" colspan="2" invisible="state != 'done'"/>
+                        <field name="error_message" nolabel="1" colspan="2" class="text-danger" invisible="state != 'failed'"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_loan_job" model="ir.actions.act_window">
+        <field name="name">Historial de Tareas</field>
+        <field name="res_model">png_biblioteca.loan.job</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Todavía no se ha ejecutado ninguna tarea programada
+            </p>
+            <p>
+                Cada ejecución de los crons de la biblioteca aparecerá aquí con su resultado.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu (solo para admins) -->
+    <menuitem id="menu_loan_job"
+              name="Historial de Tareas"
+              parent="menu_biblioteca_root"
+              action="action_loan_job"
+              groups="group_biblioteca_manager"
+              sequence="90"/>
+</odoo>

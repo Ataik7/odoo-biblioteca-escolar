@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+
+        <!-- Categoría de módulo -->
+        <record id="module_category_biblioteca" model="ir.module.category">
+            <field name="name">Biblioteca</field>
+            <field name="description">Gestión de Biblioteca Escolar</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Grupo: Usuario de Biblioteca -->
+        <record id="group_biblioteca_user" model="res.groups">
+            <field name="name">Usuario de Biblioteca</field>
+            <field name="category_id" ref="module_category_biblioteca"/>
+        </record>
+
+        <!-- Grupo: Bibliotecario -->
+        <record id="group_biblioteca_librarian" model="res.groups">
+            <field name="name">Bibliotecario</field>
+            <field name="category_id" ref="module_category_biblioteca"/>
+            <field name="implied_ids" eval="[(4, ref('group_biblioteca_user'))]"/>
+        </record>
+
+        <!-- Grupo: Administrador de Biblioteca -->
+        <record id="group_biblioteca_manager" model="res.groups">
+            <field name="name">Administrador de Biblioteca</field>
+            <field name="category_id" ref="module_category_biblioteca"/>
+            <field name="implied_ids" eval="[(4, ref('group_biblioteca_librarian'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+    </data>
+</odoo>

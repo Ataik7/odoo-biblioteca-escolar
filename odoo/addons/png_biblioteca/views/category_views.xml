@@ -1,0 +1,89 @@
+<odoo>
+    <record id="view_form_library_category" model="ir.ui.view">
+        <field name="name">library.category.form</field>
+        <field name="model">png_biblioteca.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_books" icon="fa-book">
+                            <field name="books_count" widget="statinfo" string="Libros" />
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name" placeholder="Ej: Novela Histórica, Ciencia Ficción, Infantil..."/>
+                    </group>
+                    <notebook>
+                        <page string="Libros">
+                            <field name="book_ids">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="author" />
+                                    <field name="isbn" />
+                                    <field name="state" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_library_category" model="ir.ui.view">
+        <field name="name">library.category.tree</field>
+        <field name="model">png_biblioteca.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_library_category_kanban" model="ir.ui.view">
+        <field name="name">png.biblioteca.category.kanban</field>
+        <field name="model">png_biblioteca.category</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="id" />
+                <field name="name" />
+                <field name="book_ids" />
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_card_header">
+                                <div class="o_kanban_card_header_title">
+                                    <div class="o_primary">
+                                        <strong>
+                                            <t t-if="record.name.raw_value == 'Ficción'">📖</t>
+                                            <t t-elif="record.name.raw_value == 'Ciencia'">🔬</t>
+                                            <t t-elif="record.name.raw_value == 'Historia'">📜</t>
+                                            <t t-elif="record.name.raw_value == 'Tecnología'">💻</t>
+                                            <t t-else="">📚</t>
+                                            <field name="name" />
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="o_kanban_card_content">
+                                <div class="o_kanban_record_bottom d-flex justify-content-center align-items-center"
+                                     style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; border: 1px solid #dee2e6; margin-top: 10px;">
+                                    <div class="text-center">
+                                        <div style="font-size: 28px; font-weight: bold; color: #00A09D;">
+                                            <t t-esc="record.book_ids.raw_value.length" />
+                                        </div>
+                                        <div style="font-size: 11px; text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: bold;">
+                                            Libros en catálogo
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

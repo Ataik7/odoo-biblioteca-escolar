@@ -1,0 +1,68 @@
+<odoo>
+        <!-- Definir todas las acciones de ventana -->
+
+        <record id="action_library_book" model="ir.actions.act_window">
+            <field name="name">Libros</field>
+            <field name="res_model">png_biblioteca.book</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Crea tu primer libro</p>
+                <p>Añade libros manualmente o impórtalos usando ISBN.</p>
+            </field>
+        </record>
+
+        <record id="action_library_user" model="ir.actions.act_window">
+            <field name="name">Usuarios</field>
+            <field name="res_model">png_biblioteca.user</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <record id="action_library_loan" model="ir.actions.act_window">
+            <field name="name">Préstamos</field>
+            <field name="res_model">png_biblioteca.loan</field>
+            <field name="view_mode">kanban,tree,form,graph,pivot</field>
+        </record>
+
+        <record id="action_library_category" model="ir.actions.act_window">
+            <field name="name">Categorías</field>
+            <field name="res_model">png_biblioteca.category</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <!-- Definir los menús que usan esas acciones -->
+        <!-- Menú Principal -->
+
+        <menuitem id="menu_biblioteca_root"
+            name="Biblioteca"
+            web_icon="png_biblioteca,static/description/icon.png"
+            groups="png_biblioteca.group_biblioteca_user"
+            sequence="10" />
+
+        <!-- Submenú: Libros -->
+        <menuitem id="menu_biblioteca_books"
+            name="Libros"
+            parent="menu_biblioteca_root"
+            action="action_library_book"
+            sequence="10" />
+
+        <!-- Submenú: Usuarios -->
+        <menuitem id="menu_biblioteca_users"
+            name="Usuarios"
+            parent="menu_biblioteca_root"
+            action="action_library_user"
+            sequence="20" />
+
+        <!-- Submenú: Préstamos -->
+        <menuitem id="menu_biblioteca_loans"
+            name="Préstamos"
+            parent="menu_biblioteca_root"
+            action="action_library_loan"
+            sequence="30" />
+
+        <!-- Submenú: Categorías -->
+        <menuitem id="menu_biblioteca_categories"
+            name="Categorías"
+            parent="menu_biblioteca_root"
+            action="action_library_category"
+            sequence="40" />
+</odoo>

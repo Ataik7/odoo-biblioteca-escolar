@@ -1,0 +1,56 @@
+<odoo>
+    <data noupdate="0">
+
+        <!-- Colores (1-11): se necesitan para que las etiquetas se vean en el kanban -->
+
+        <record id="category_fiction" model="png_biblioteca.category">
+            <field name="name">Ficción</field>
+            <field name="color">4</field>
+        </record>
+
+        <record id="category_science" model="png_biblioteca.category">
+            <field name="name">Ciencia</field>
+            <field name="color">10</field>
+        </record>
+
+        <record id="category_history" model="png_biblioteca.category">
+            <field name="name">Historia</field>
+            <field name="color">2</field>
+        </record>
+
+        <record id="category_technology" model="png_biblioteca.category">
+            <field name="name">Tecnología</field>
+            <field name="color">8</field>
+        </record>
+
+        <record id="category_children" model="png_biblioteca.category">
+            <field name="name">Infantil</field>
+            <field name="color">3</field>
+        </record>
+
+        <record id="category_art" model="png_biblioteca.category">
+            <field name="name">Arte</field>
+            <field name="color">9</field>
+        </record>
+
+        <record id="category_education" model="png_biblioteca.category">
+            <field name="name">Educación</field>
+            <field name="color">7</field>
+        </record>
+
+        <record id="category_philosophy" model="png_biblioteca.category">
+            <field name="name">Filosofía</field>
+            <field name="color">11</field>
+        </record>
+
+        <record id="category_poetry" model="png_biblioteca.category">
+            <field name="name">Poesía</field>
+            <field name="color">6</field>
+        </record>
+
+        <record id="category_comics" model="png_biblioteca.category">
+            <field name="name">Cómics</field>
+            <field name="color">1</field>
+        </record>
+    </data>
+</odoo>

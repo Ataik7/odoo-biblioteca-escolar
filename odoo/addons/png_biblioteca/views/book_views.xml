@@ -1,0 +1,204 @@
+<odoo>
+    <record id="view_form_library_book" model="ir.ui.view">
+        <field name="name">library.book.form</field>
+        <field name="model">png_biblioteca.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_fetch_from_isbn" string="Actualizar datos ISBN"
+                        type="object" class="btn-primary" invisible="not isbn" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_loans"
+                            string="Ver Préstamos"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-list">
+                            <field name="total_loans_count" widget="statinfo" string="Préstamos" />
+                        </button>
+
+                        <button name="action_view_active_loans"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-book">
+                            <field name="active_loans_count" widget="statinfo" string="Activos" />
+                        </button>
+                    </div>
+
+                    <field name="image" widget="image" class="oe_avatar o_book_cover"
+                        options='{"preview_image": "image"}' />
+
+                    <div class="oe_title">
+                        <label for="name" string="Título del Libro" />
+                        <h1>
+                            <field name="name" placeholder="Ej. Harry Potter y la Piedra Filosofal" />
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="Información Básica">
+                            <field name="author"
+                                placeholder="Ej: J.K. Rowling o Miguel de Cervantes"
+                                help="Nombre completo del autor o autores del libro." />
+
+                            <field name="category_ids" widget="many2many_tags"
+                                options="{'no_create': True, 'no_open': True, 'color_field': 'color'}"
+                                placeholder="Seleccione categorías..."
+                                help="El libro puede pertenecer a múltiples categorías." />
+
+                            <field name="publisher" placeholder="Ej: Editorial Planeta o Alfaguara"
+                                help="Empresa encargada de la edición y distribución." />
+                            <field name="pages" placeholder="Ej: Número de páginas del libro"
+                                help="Número total de páginas" />
+                        </group>
+                        <group string="
+                                Identificación">
+                            <field name="isbn" placeholder="Ej: 9788467041538"
+                                help="Código internacional normalizado de 10 o 13 dígitos sin guiones." />
+                            <field name="isbn_formatted" readonly="1"
+                                placeholder="Se generará automáticamente..."
+                                help="Formato visual del ISBN con guiones estándar generado automáticamente." />
+                            <field name="publication_date"
+                                placeholder="Seleccione la fecha de edición"
+                                help="Fecha de lanzamiento o impresión de esta edición específica." />
+                            <field name="state" widget="badge"
+                                decoration-success="state== 'available'"
+                                decoration-warning="state == 'borrowed'"
+                                help="Indica si el ejemplar se encuentra en estantería o en préstamo." />
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Sinopsis" name="description_page" invisible="not description">
+                            <field name="description" widget="text" nolabel="1"
+                                placeholder="Sin descripción disponible" />
+                        </page>
+
+                        <page string="Préstamos">
+                            <field name="loan_ids" nolabel="1">
+                                <tree editable="bottom"
+                                    decoration-info="state == 'ongoing'"
+                                    decoration-success="state == 'returned'"
+                                    decoration-danger="state == 'overdue'"
+                                    create="true"
+                                    delete="false"
+                                    default_order="loan_date desc">
+                                    <field name="user_id" string="Usuario" width="200" />
+                                    <field name="loan_date" string="Fecha de Préstamo" width="130" />
+                                    <field name="return_date" string="Fecha de Devolución"
+                                        width="140" />
+                                    <field name="actual_return_date" string="Devuelto el"
+                                        width="130" optional="show" />
+                                    <field name="state" string="Estado" widget="badge" width="110" />
+                                    <field name="days_remaining" string="Días Restantes" width="120"
+                                        optional="hide" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_library_book" model="ir.ui.view">
+        <field name="name">library.book.tree</field>
+        <field name="model">png_biblioteca.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="image_128" widget="image" width="50px" />
+                <field name="name" />
+                <field name="author" />
+                <field name="isbn" />
+                <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
+                <field name="publisher" optional="show" />
+                <field name="pages" optional="hide" />
+                <field name="state" widget="badge"
+                    decoration-success="state == 'available'"
+                    decoration-warning="state == 'borrowed'" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_library_book_kanban" model="ir.ui.view">
+        <field name="name">png.biblioteca.book.kanban</field>
+        <field name="model">png_biblioteca.book</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">
+                <field name="name" />
+                <field name="author" />
+                <field name="category_ids" />
+                <field name="state" />
+                <field name="isbn" />
+                <field name="image_128" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <field name="image_128" widget="image"
+                                    options="{'preview_image': 'image_128'}" />
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name" />
+                                </strong>
+                                <div class="o_kanban_record_subtitle">
+                                    <i class="fa fa-user" title="Autor" />
+                                    <field name="author" />
+                                </div>
+                                <div class="o_kanban_record_subtitle d-flex align-items-center gap-1">
+                                    <i class="fa fa-tag" title="Categoría" />
+                                    <field name="category_ids" widget="many2many_tags"
+                                        options="{'color_field': 'color'}" />
+                                </div>
+                                <div class="oe_kanban_footer">
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left">
+                                            <span
+                                                t-attf-class="badge rounded-pill {{record.state.raw_value == 'available' ? 'text-bg-success' : 'text-bg-warning'}}">
+                                                <field name="state" />
+                                            </span>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="isbn" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_library_book_search" model="ir.ui.view">
+        <field name="name">png.biblioteca.book.search</field>
+        <field name="model">png_biblioteca.book</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Libros">
+                <field name="name" />
+                <field name="author" />
+                <field name="isbn" />
+                <field name="category_ids" />
+                <field name="publisher" />
+                <filter name="available" string="Disponibles" domain="[('state', '=', 'available')]" />
+                <filter name="borrowed" string="Prestados" domain="[('state', '=', 'borrowed')]" />
+                <group expand="0" string="Group By">
+                    <filter name="group_category" string="Categoría"
+                        context="{'group_by': 'category_ids'}" />
+                    <filter name="group_author" string="Autor" context="{'group_by': 'author'}" />
+                    <filter name="group_publisher" string="Editorial"
+                        context="{'group_by': 'publisher'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

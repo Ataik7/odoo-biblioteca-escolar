@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_book_user,book.user,model_png_biblioteca_book,group_biblioteca_user,1,0,0,0
+access_loan_user,loan.user,model_png_biblioteca_loan,group_biblioteca_user,1,0,0,0
+access_cat_user,cat.user,model_png_biblioteca_category,group_biblioteca_user,1,0,0,0
+access_user_user,user.user,model_png_biblioteca_user,group_biblioteca_user,1,0,0,0
+access_wiz_user,wiz.user,model_png_biblioteca_book_search_wizard,group_biblioteca_user,1,1,1,1
+access_result_user,result.user,model_png_biblioteca_book_search_result,group_biblioteca_user,1,1,1,1
+access_user_librarian,user.librarian,model_png_biblioteca_user,group_biblioteca_librarian,1,1,1,0
+access_loan_librarian,loan.librarian,model_png_biblioteca_loan,group_biblioteca_librarian,1,1,1,0
+access_book_librarian,book.librarian,model_png_biblioteca_book,group_biblioteca_librarian,1,1,1,0
+access_cat_librarian,cat.librarian,model_png_biblioteca_category,group_biblioteca_librarian,1,1,1,0
+access_job_librarian,job.librarian,model_png_biblioteca_loan_job,group_biblioteca_librarian,1,0,0,0
+access_book_manager,book.manager,model_png_biblioteca_book,group_biblioteca_manager,1,1,1,1
+access_loan_manager,loan.manager,model_png_biblioteca_loan,group_biblioteca_manager,1,1,1,1
+access_cat_manager,cat.manager,model_png_biblioteca_category,group_biblioteca_manager,1,1,1,1
+access_user_manager,user.manager,model_png_biblioteca_user,group_biblioteca_manager,1,1,1,1
+access_job_manager,job.manager,model_png_biblioteca_loan_job,group_biblioteca_manager,1,0,0,1

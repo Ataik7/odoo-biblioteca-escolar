@@ -1,0 +1,290 @@
+<odoo>
+    <!-- Vista de formulario -->
+    <record id="view_book_search_wizard_form" model="ir.ui.view">
+        <field name="name">png_biblioteca.book.search.wizard.form</field>
+        <field name="model">png_biblioteca.book.search.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Buscar Libros en Open Library">
+                <sheet>
+
+                    <!-- Vista de búsqueda -->
+                    <group invisible="state == 'results'">
+                        <group>
+                            <field name="search_type" widget="radio" />
+                            <field name="search_language"
+                                invisible="search_type == 'isbn'" />
+                            <field name="category_id"
+                                placeholder="Selecciona una categoría (opcional)" />
+                        </group>
+
+                        <group>
+                            <field name="search_title"
+                                placeholder="Ej: Harry Potter"
+                                invisible="search_type != 'title'"
+                                required="search_type == 'title'" />
+
+                            <field name="search_author"
+                                placeholder="Ej: J.K. Rowling"
+                                invisible="search_type != 'author'"
+                                required="search_type == 'author'" />
+
+                            <field name="search_isbn"
+                                placeholder="Ej: 9780747532743"
+                                invisible="search_type != 'isbn'"
+                                required="search_type == 'isbn'" />
+                        </group>
+                    </group>
+
+                    <!-- Vista de resultados Kanban -->
+                    <group invisible="state == 'search'" colspan="2">
+                        <field name="result_ids" nolabel="1" mode="kanban" colspan="2">
+                            <kanban create="false" edit="false">
+                                <field name="title" />
+                                <field name="author" />
+                                <field name="year" />
+                                <field name="isbn" />
+                                <field name="cover_id" />
+                                <field name="suggested_category" />
+                                <field name="existing_book_id" />
+                                <field name="isbn_valid" />
+
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div
+                                            style="padding: 12px; margin: 6px 0; border: 1px solid #dee2e6; border-radius: 6px; background: #fff; transition: box-shadow 0.2s;">
+                                            <div
+                                                style="display: flex; gap: 15px; align-items: flex-start;">
+
+                                                <!-- Portada del libro -->
+                                                <div style="flex-shrink: 0; width: 65px;">
+                                                    <t t-if="record.cover_id.value">
+                                                        <img
+                                                            t-attf-src="https://covers.openlibrary.org/b/id/#{record.cover_id.value}-M.jpg"
+                                                            alt="Portada"
+                                                            style="width: 65px; height: 95px; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.15);" />
+                                                    </t>
+                                                    <t t-else="">
+                                                        <div
+                                                            style="width: 65px; height: 95px; background: #f8f9fa; border-radius: 4px; display: flex; align-items: center; justify-content: center; border: 1px solid #dee2e6;">
+                                                            <i class="fa fa-book" title="Libro"
+                                                                style="font-size: 26px; color: #adb5bd;" />
+                                                        </div>
+                                                    </t>
+                                                </div>
+
+                                                <!-- Información del libro -->
+                                                <div
+                                                    style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px;">
+
+                                                    <!-- Título completo (sin truncar) -->
+                                                    <div
+                                                        style="font-size: 14px; font-weight: 600; color: #212529; line-height: 1.4; word-wrap: break-word;">
+                                                        <field name="title" />
+                                                    </div>
+
+                                                    <!-- Autor -->
+                                                    <div style="font-size: 13px; color: #6c757d;">
+                                                        <i class="fa fa-user"
+                                                            style="width: 18px; text-align: center; color: #495057;" />
+                                                        <span>
+                                                            <field name="author" />
+                                                        </span>
+                                                    </div>
+
+                                                    <!-- Categoría sugerida -->
+                                                    <div style="font-size: 12px; color: #28a745;"
+                                                        t-if="record.suggested_category.value">
+                                                        <i class="fa fa-tag" title="Género"
+                                                            style="width: 18px; text-align: center;" />
+                                                        <span><field name="suggested_category" />
+                                                            (auto)</span>
+                                                    </div>
+
+                                                    <!-- Año y ISBN -->
+                                                    <div
+                                                        style="font-size: 12px; color: #868e96; display: flex; gap: 20px; flex-wrap: wrap;">
+                                                         <span>
+                                                            <i class="fa fa-calendar" title="Año"
+                                                                style="width: 18px; text-align: center;" />
+                                                            <t t-esc="record.year.raw_value" />
+                                                        </span>
+                                                        <span t-if="record.isbn.value and record.isbn_valid.raw_value"
+                                                            style="font-family: monospace;">
+                                                            <i class="fa fa-barcode" title="ISBN"
+                                                                style="width: 18px; text-align: center;" />
+                                                            <field name="isbn" />
+                                                        </span>
+                                                        <span t-elif="record.isbn.value"
+                                                            class="text-warning"
+                                                            title="El ISBN que da Open Library no es válido (dígito de control incorrecto)"
+                                                            style="font-family: monospace;">
+                                                            <i class="fa fa-exclamation-triangle"
+                                                                style="width: 18px; text-align: center;" />
+                                                            <field name="isbn" /> (ISBN no válido)
+                                                        </span>
+                                                        <span t-else=""
+                                                            style="color: #adb5bd; font-style: italic;">
+                                                            Sin ISBN
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Botón de importar / ya importado -->
+                                                <div
+                                                    style="flex-shrink: 0; display: flex; align-items: center; padding-left: 10px;">
+                                                    <button t-if="record.existing_book_id.raw_value"
+                                                        name="action_open_existing"
+                                                        type="object"
+                                                        class="btn btn-success"
+                                                        title="Este ISBN ya está en tu biblioteca"
+                                                        style="font-size: 13px; padding: 8px 16px; white-space: nowrap; font-weight: 500;">
+                                                        <i class="fa fa-check" /> Ya en biblioteca </button>
+                                                    <button t-elif="record.isbn.value and !record.isbn_valid.raw_value"
+                                                        name="action_import"
+                                                        type="object"
+                                                        class="btn btn-secondary"
+                                                        title="Se importará sin ISBN; podrás escribir el correcto después"
+                                                        style="font-size: 13px; padding: 8px 16px; white-space: nowrap; font-weight: 500;">
+                                                        <i class="fa fa-download" /> Importar sin ISBN </button>
+                                                    <button t-else=""
+                                                        name="action_import"
+                                                        type="object"
+                                                        class="btn btn-primary"
+                                                        style="font-size: 13px; padding: 8px 16px; white-space: nowrap; font-weight: 500;">
+                                                        <i class="fa fa-download" /> Importar </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </group>
+
+                    <field name="state" invisible="1" />
+                </sheet>
+
+                <footer>
+                    <!-- Botones para búsqueda -->
+                    <button name="action_search"
+                        type="object"
+                        string="🔍 Buscar"
+                        class="btn-primary"
+                        invisible="state == 'results'" />
+
+                    <!-- Botones para resultados -->
+                    <button name="action_back"
+                        type="object"
+                        string="← Nueva Búsqueda"
+                        class="btn-secondary"
+                        invisible="state == 'search'" />
+
+                    <button string="Cerrar"
+                        class="btn-secondary"
+                        special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+     <!-- ==================== VISTAS TREE ==================== -->
+
+    <!-- Vista Tree para wizard de búsqueda -->
+    <record id="view_tree_book_search_wizard" model="ir.ui.view">
+        <field name="name">png_biblioteca.book.search.wizard.tree</field>
+        <field name="model">png_biblioteca.book.search.wizard</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="search_type" string="Tipo de búsqueda"/>
+                <field name="search_title" string="Título buscado"/>
+                <field name="search_author" string="Autor buscado"/>
+                <field name="search_isbn" string="ISBN buscado"/>
+                <field name="state" string="Estado" widget="badge"/>
+                <field name="create_date" string="Fecha"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Tree para resultados de búsqueda -->
+    <record id="view_tree_book_search_result" model="ir.ui.view">
+        <field name="name">png_biblioteca.book.search.result.tree</field>
+        <field name="model">png_biblioteca.book.search.result</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title" string="Título"/>
+                <field name="author" string="Autor"/>
+                <field name="isbn" string="ISBN"/>
+                <field name="year" string="Año"/>
+                <field name="suggested_category" string="Categoría sugerida"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Form para resultados de búsqueda -->
+    <record id="view_form_book_search_result" model="ir.ui.view">
+        <field name="name">png_biblioteca.book.search.result.form</field>
+        <field name="model">png_biblioteca.book.search.result</field>
+        <field name="arch" type="xml">
+            <form string="Resultado de Búsqueda">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="title" string="Título"/>
+                        <h1>
+                            <field name="title" readonly="1"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="Información del Libro">
+                            <field name="author" readonly="1"/>
+                            <field name="isbn" readonly="1"/>
+                            <field name="year" readonly="1"/>
+                            <field name="suggested_category" readonly="1"/>
+                        </group>
+                        <group string="Metadatos">
+                            <field name="cover_id" readonly="1"/>
+                            <field name="wizard_id" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_import"
+                        string="📥 Importar este libro"
+                        type="object"
+                        class="btn-primary"/>
+                    <button string="Cerrar"
+                        class="btn-secondary"
+                        special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- ==================== ACCIONES ==================== -->
+
+    <!-- Acción para resultados de búsqueda -->
+    <record id="action_book_search_result" model="ir.actions.act_window">
+        <field name="name">Resultados de Búsqueda</field>
+        <field name="res_model">png_biblioteca.book.search.result</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para abrir el Wizard -->
+    <record id="action_book_search_wizard" model="ir.actions.act_window">
+        <field name="name">Buscar Libros en Open Library</field>
+        <field name="res_model">png_biblioteca.book.search.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- ==================== MENÚS ==================== -->
+
+    <!-- Menú para acceder al Wizard -->
+    <menuitem id="menu_book_search_wizard"
+        name="🔍 Búsqueda de libros"
+        parent="menu_biblioteca_root"
+        action="action_book_search_wizard"
+        sequence="50" />
+
+</odoo>

@@ -1,0 +1,158 @@
+<odoo>
+    <data noupdate="1">
+
+        <!--Libros de ejemplo-->
+        <record id="demo_book_1984" model="png_biblioteca.book">
+            <field name="name">1984</field>
+            <field name="author">George Orwell</field>
+            <field name="publisher">Debolsillo</field>
+            <field name="isbn">9788499890944</field>
+            <field name="category_ids" eval="[(6, 0, [ref('png_biblioteca.category_fiction')])]" />
+            <field name="publication_date">1949-06-08</field>
+            <field name="pages">352</field>
+            <field name="description">En el año 1984 Londres es una ciudad lúgubre en la que la Policía del Pensamiento controla de forma asfixiante la vida de los ciudadanos.</field>
+            <field name="image" type="base64" file="png_biblioteca/static/img/books/1984.webp" />
+        </record>
+
+        <record id="demo_book_brave_new_world" model="png_biblioteca.book">
+            <field name="name">Un Mundo Feliz</field>
+            <field name="author">Aldous Huxley</field>
+            <field name="publisher">Debolsillo</field>
+            <field name="isbn">9788497594257</field>
+            <field name="category_ids" eval="[(6, 0, [ref('png_biblioteca.category_fiction')])]" />
+            <field name="publication_date">1932-08-12</field>
+            <field name="pages">256</field>
+            <field name="description">Una sombría metáfora sobre el futuro, donde los humanos son creados in vitro y condicionados.</field>
+            <field name="image" type="base64"
+                file="png_biblioteca/static/img/books/un_mundo_feliz.webp" />
+        </record>
+
+        <record id="demo_book_sapiens" model="png_biblioteca.book">
+            <field name="name">Sapiens: De animales a dioses</field>
+            <field name="author">Yuval Noah Harari</field>
+            <field name="publisher">Debate</field>
+            <field name="isbn">9788499926223</field>
+            <field name="category_ids" eval="[(6, 0, [ref('png_biblioteca.category_science')])]" />
+            <field name="publication_date">2014-09-04</field>
+            <field name="pages">496</field>
+            <field name="description">Un recorrido por la historia de nuestra especie, desde los primeros humanos hasta los avances modernos.</field>
+            <field name="image" type="base64"
+                file="png_biblioteca/static/img/books/sapiens_de_animales_a_dioses.webp" />
+        </record>
+
+        <record id="demo_book_quijote" model="png_biblioteca.book">
+            <field name="name">Don Quijote de la Mancha (EDICION CONMEMORATIVA IV CENTENARIO)</field>
+            <field name="author">Miguel de Cervantes</field>
+            <field name="publisher">Alfaguara / RAE</field>
+            <field name="isbn">9788420412146</field>
+            <field name="category_ids" eval="[(6, 0, [ref('png_biblioteca.category_fiction')])]" />
+            <field name="publication_date">1605-01-16</field>
+            <field name="pages">1376</field>
+            <field name="description">La obra cumbre de la literatura española sobre las aventuras de un hidalgo que cree ser caballero.</field>
+            <field name="image" type="base64"
+                file="png_biblioteca/static/img/books/don_quijote_de_la_mancha.webp" />
+        </record>
+
+        <record id="demo_book_hobbit" model="png_biblioteca.book">
+            <field name="name">El Hobbit</field>
+            <field name="author">J.R.R. Tolkien</field>
+            <field name="publisher">Minotauro (Grupo Planeta)</field>
+            <field name="isbn">9788445012802</field>
+            <field name="category_ids" eval="[(6, 0, [ref('png_biblioteca.category_fiction')])]" />
+            <field name="publication_date">1937-09-21</field>
+            <field name="pages">310</field>
+            <field name="description">Bilbo Bolsón es arrastrado a una aventura inesperada para recuperar el tesoro de la Montaña Solitaria.</field>
+            <field name="image" type="base64"
+                file="png_biblioteca/static/img/books/el_hobbit.webp" />
+        </record>
+
+        <!--Users de ejemplo-->
+        <record id="demo_user_1" model="png_biblioteca.user">
+            <field name="name">Juan Pérez</field>
+            <field name="user_type">student</field>
+            <field name="library_card">LIB001</field>
+            <field name="email">juan.perez@example.com</field>
+            <field name="image" type="base64" file="png_biblioteca/static/img/users/user1.jpg" />
+        </record>
+
+        <record id="demo_user_2" model="png_biblioteca.user">
+            <field name="name">María García</field>
+            <field name="user_type">teacher</field>
+            <field name="library_card">LIB002</field>
+            <field name="email">maria.garcia@example.com</field>
+            <field name="image" type="base64" file="png_biblioteca/static/img/users/user2.jpg" />
+        </record>
+
+        <record id="demo_user_3" model="png_biblioteca.user">
+            <field name="name">Carlos Ruiz</field>
+            <field name="user_type">student</field>
+            <field name="library_card">LIB003</field>
+            <field name="email">carlos.ruiz@example.com</field>
+            <field name="image" type="base64" file="png_biblioteca/static/img/users/user3.jpg" />
+        </record>
+
+        <record id="demo_user_4" model="png_biblioteca.user">
+            <field name="name">Ana Belén</field>
+            <field name="user_type">student</field>
+            <field name="library_card">LIB004</field>
+            <field name="email">ana.belen@example.com</field>
+            <field name="image" type="base64" file="png_biblioteca/static/img/users/user4.jpg" />
+        </record>
+
+        <record id="demo_user_5" model="png_biblioteca.user">
+            <field name="name">Roberto Gómez</field>
+            <field name="user_type">teacher</field>
+            <field name="library_card">LIB005</field>
+            <field name="email">roberto.gomez@example.com</field>
+            <field name="image" type="base64" file="png_biblioteca/static/img/users/user5.jpg" />
+        </record>
+
+        <!--Préstamos de ejemplo-->
+        <record id="demo_loan_1" model="png_biblioteca.loan">
+            <field name="user_id" ref="demo_user_1" />
+            <field name="book_id" ref="demo_book_1984" />
+            <field name="loan_date"
+                eval="(datetime.now() - relativedelta(days=10)).strftime('%Y-%m-%d')" />
+            <field name="return_date"
+                eval="(datetime.now() + relativedelta(days=5)).strftime('%Y-%m-%d')" />
+        </record>
+
+        <record id="demo_loan_2" model="png_biblioteca.loan">
+            <field name="user_id" ref="demo_user_2" />
+            <field name="book_id" ref="demo_book_sapiens" />
+            <field name="loan_date"
+                eval="(datetime.now() - relativedelta(months=1)).strftime('%Y-%m-%d')" />
+            <field name="return_date"
+                eval="(datetime.now() - relativedelta(days=15)).strftime('%Y-%m-%d')" />
+            <field name="actual_return_date"
+                eval="(datetime.now() - relativedelta(days=16)).strftime('%Y-%m-%d')" />
+        </record>
+
+        <record id="demo_loan_3" model="png_biblioteca.loan">
+            <field name="user_id" ref="demo_user_3" />
+            <field name="book_id" ref="demo_book_hobbit" />
+            <field name="loan_date" eval="datetime.now().strftime('%Y-%m-%d')" />
+            <field name="return_date"
+                eval="(datetime.now() + relativedelta(days=15)).strftime('%Y-%m-%d')" />
+
+        </record>
+
+        <record id="demo_loan_4" model="png_biblioteca.loan">
+            <field name="user_id" ref="demo_user_4" />
+            <field name="book_id" ref="demo_book_quijote" />
+            <field name="loan_date"
+                eval="(datetime.now() - relativedelta(days=20)).strftime('%Y-%m-%d')" />
+            <field name="return_date"
+                eval="(datetime.now() - relativedelta(days=5)).strftime('%Y-%m-%d')" />
+        </record>
+
+        <record id="demo_loan_5" model="png_biblioteca.loan">
+            <field name="user_id" ref="demo_user_5" />
+            <field name="book_id" ref="demo_book_brave_new_world" />
+            <field name="loan_date"
+                eval="(datetime.now() - relativedelta(days=2)).strftime('%Y-%m-%d')" />
+            <field name="return_date"
+                eval="(datetime.now() + relativedelta(days=13)).strftime('%Y-%m-%d')" />
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,203 @@
+<odoo>
+    <record id="view_library_loan_form" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.form</field>
+        <field name="model">png_biblioteca.loan</field>
+        <field name="arch" type="xml">
+            <form string="Préstamo">
+                <header>
+                    <button name="%(png_biblioteca.action_report_loan_ticket)d"
+                        string="Imprimir Ticket"
+                        type="action"
+                        class="btn-secondary" />
+
+                    <button name="action_return_book"
+                        string="Marcar como Devuelto"
+                        type="object"
+                        class="btn-primary"
+                        groups="png_biblioteca.group_biblioteca_librarian"
+                        invisible="state in ['returned', 'late_returned']" />
+
+                    <button name="action_extend_loan"
+                        string="Extender 7 días"
+                        type="object"
+                        class="btn-secondary"
+                        groups="png_biblioteca.group_biblioteca_librarian"
+                        invisible="state != 'ongoing'" />
+
+                    <field name="state" widget="statusbar"
+                        statusbar_visible="ongoing,returned,overdue,late_returned" />
+                </header>
+
+                <sheet>
+                    <group>
+                        <group string="Información Principal">
+                            <field name="user_id" options="{'no_create': True}"
+                                placeholder="Escriba el nombre del alumno"
+                                help="Seleccione el alumno registrado en el sistema." />
+                            <field name="book_id" options="{'no_create': True}"
+                                placeholder="Busque por título"
+                                help="Seleccione el libro asociándolo por su título." />
+                        </group>
+                        <group string="Fechas">
+                            <field name="loan_date" placeholder="Fecha de entrega del libro" />
+                            <field name="return_date" placeholder="Fecha límite de devolución" />
+                            <field name="actual_return_date"
+                                invisible="state not in ['returned', 'late_returned']" />
+                        </group>
+                        <group string="Estado del Tiempo" invisible="state == 'returned'">
+                            <field name="overdue_days"
+                                invisible="state not in ['overdue', 'late_returned']" />
+                            <field name="days_remaining"
+                                invisible="state in ['returned', 'late_returned']" />
+                            <field name="is_due_soon" invisible="1" />
+                        </group>
+                    </group>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_library_loan_tree" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.tree</field>
+        <field name="model">png_biblioteca.loan</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="state == 'overdue'"
+                decoration-warning="state == 'late_returned'">
+                <field name="user_id" />
+                <field name="book_id" />
+                <field name="loan_date" />
+                <field name="return_date" />
+                <field name="state" widget="badge"
+                    decoration-info="state == 'ongoing'"
+                    decoration-success="state == 'returned'"
+                    decoration-danger="state == 'overdue'"
+                    decoration-warning="state == 'late_returned'" />
+                <field name="overdue_days" optional="show" />
+                <field name="days_remaining" optional="hide" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_library_loan_kanban" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.kanban</field>
+        <field name="model">png_biblioteca.loan</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column" quick_create="false">
+                <field name="state" />
+                <field name="overdue_days" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <strong class="o_kanban_record_title"> 📚 <field name="book_id" /></strong>
+                                </div>
+                                <div class="o_kanban_record_body">
+
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fa fa-user me-2"
+                                            style="width: 16px; text-align: center;" title="Usuario" />
+                                        <field name="user_id" />
+                                    </div>
+
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fa fa-calendar me-2"
+                                            style="width: 16px; text-align: center;"
+                                            title="Fecha Límite" />
+                                        <span>
+                                            <strong>Límite: </strong>
+                                            <span
+                                                t-attf-class="#{record.state.raw_value == 'overdue' ? 'text-danger fw-bold' : ''}">
+                                                <field name="return_date" />
+                                            </span>
+                                        </span>
+                                    </div>
+
+                                    <div t-if="record.overdue_days.raw_value > 0"
+                                        class="d-flex align-items-center mb-1 text-danger">
+                                        <i class="fa fa-clock-o me-2"
+                                            style="width: 16px; text-align: center;"
+                                            title="Días de Retraso" />
+                                        <span>
+                                            <strong>Retraso: </strong>
+                                            <field name="overdue_days" />
+                                            días </span>
+                                    </div>
+                                    <div t-if="record.actual_return_date.value"
+                                        style="margin-top: 5px;">
+                                        <i
+                                            t-attf-class="fa fa-check-circle me-2 #{record.state.raw_value == 'late_returned' ? 'text-warning' : 'text-success'}"
+                                            title="Estado de devolución" />
+                                        <strong>Devuelto: </strong>
+                                        <field name="actual_return_date" />
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom"
+                                    t-if="record.state.raw_value in ['ongoing', 'overdue']">
+                                    <div class="oe_kanban_bottom_right">
+                                        <button name="action_return_book" type="object"
+                                            groups="png_biblioteca.group_biblioteca_librarian"
+                                            class="btn btn-sm btn-primary">Devolver</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_library_loan_graph" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.graph</field>
+        <field name="model">png_biblioteca.loan</field>
+        <field name="arch" type="xml">
+            <graph string="Análisis de Préstamos" type="bar" sample="1">
+                <field name="book_id" type="row" />
+                <field name="loan_date" interval="month" type="col" />
+                <field name="overdue_days" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_library_loan_pivot" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.pivot</field>
+        <field name="model">png_biblioteca.loan</field>
+        <field name="arch" type="xml">
+            <pivot string="Análisis Detallado">
+                <field name="loan_date" interval="month" type="row" />
+                <field name="book_id" type="row" />
+                <field name="state" type="col" />
+                <field name="overdue_days" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_library_loan_search" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.search</field>
+        <field name="model">png_biblioteca.loan</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id" />
+                <field name="book_id" />
+                <filter string="En curso" name="ongoing" domain="[('state', '=', 'ongoing')]" />
+                <filter string="Vencidos" name="overdue" domain="[('state', '=', 'overdue')]" />
+                <separator />
+                <filter string="Este Mes" name="month"
+                    domain="[('loan_date','&gt;=', context_today().strftime('%Y-%m-01'))]" />
+                <group expand="0" string="Agrupar por">
+                    <filter string="Usuario" name="group_user" context="{'group_by': 'user_id'}" />
+                    <filter string="Libro" name="group_book" context="{'group_by': 'book_id'}" />
+                    <filter string="Mes de Préstamo" name="group_date"
+                        context="{'group_by': 'loan_date:month'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

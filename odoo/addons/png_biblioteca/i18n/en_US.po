@@ -1,0 +1,1370 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* png_biblioteca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20251121\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-30 15:03+0000\n"
+"PO-Revision-Date: 2025-12-30 16:56+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.8\n"
+
+#. module: png_biblioteca
+#: model:ir.actions.report,print_report_name:png_biblioteca.action_report_loan_ticket
+msgid "'Ticket_%s' % (object.book_id.name)"
+msgstr "'Ticket_%s' % (object.book_id.name)"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "(auto)"
+msgstr "(auto)"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid ""
+"<i class=\"fa fa-barcode\" title=\"ISBN\" style=\"width: 18px; text-align: "
+"center;\"/>"
+msgstr ""
+"<i class=\"fa fa-barcode\" title=\"ISBN\" style=\"width: 18px; text-align: "
+"center;\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid ""
+"<i class=\"fa fa-book\" title=\"Libro\" style=\"font-size: 26px; color: "
+"#adb5bd;\"/>"
+msgstr ""
+"<i class=\"fa fa-book\" title=\"Book\" style=\"font-size: 26px; color: "
+"#adb5bd;\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid ""
+"<i class=\"fa fa-calendar me-2\" style=\"width: 16px; text-align: center;\" "
+"title=\"Fecha Límite\"/>"
+msgstr ""
+"<i class=\"fa fa-calendar me-2\" style=\"width: 16px; text-align: center;\" "
+"title=\"Fecha Límite\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid ""
+"<i class=\"fa fa-calendar\" title=\"Año\" style=\"width: 18px; text-align: "
+"center;\"/>"
+msgstr ""
+"<i class=\"fa fa-calendar\" title=\"Year\" style=\"width: 18px; text-align: "
+"center;\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid ""
+"<i class=\"fa fa-clock-o me-2\" style=\"width:  16px; text-align:  center;"
+"\" title=\"Días de Retraso\"/>"
+msgstr ""
+"<i class=\"fa fa-calendar me-2\" title=\"Loan Date\"/> <strong>Deadline: </"
+"strong>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "<i class=\"fa fa-download\"/> Importar"
+msgstr "<i class=\"fa fa-download\"/> Import"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_user_kanban
+msgid "<i class=\"fa fa-id-card\" title=\"Número de Carnet\"/>"
+msgstr "\t<i class=\"fa fa-id-card\" title=\"Library Card Number\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_kanban
+msgid "<i class=\"fa fa-tag\" title=\"Categoría\"/>"
+msgstr "\t<i class=\"fa fa-tag\" title=\"Category\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid ""
+"<i class=\"fa fa-tag\" title=\"Género\" style=\"width: 18px; text-align: "
+"center;\"/>"
+msgstr ""
+"\t<i class=\"fa fa-tag\" title=\"Genre\" style=\"width: 18px; text-align: "
+"center;\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid ""
+"<i class=\"fa fa-user me-2\" style=\"width: 16px; text-align: center;\" "
+"title=\"Usuario\"/>"
+msgstr "\t<i class=\"fa fa-user me-2\" title=\"User\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_kanban
+msgid "<i class=\"fa fa-user\" title=\"Autor\"/>"
+msgstr "\t<i class=\"fa fa-user\" title=\"Author\"/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "<strong>Carnet:</strong><br/>"
+msgstr "<strong>Library Card:</strong><br/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid "<strong>Devuelto: </strong>"
+msgstr "<strong>Returned: </strong>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "<strong>Fecha de Préstamo:</strong><br/>"
+msgstr "<strong>Loan Date:</strong><br/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "<strong>Lector:</strong><br/>"
+msgstr "<strong>Reader:</strong><br/>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid "<strong>Límite: </strong>"
+msgstr "<strong>Loan Date: </strong>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid "<strong>Retraso: </strong>"
+msgstr "<strong>Delay: </strong>"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "<strong>Vencimiento:</strong><br/>"
+msgstr "<strong>Due Date:</strong><br/>"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_needaction
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_needaction
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_needaction
+msgid "Action Needed"
+msgstr "Action Needed"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_ids
+msgid "Activities"
+msgstr "Activities"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_exception_decoration
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_exception_decoration
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activity Exception Decoration"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_state
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_state
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_state
+msgid "Activity State"
+msgstr "Activity State"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_type_icon
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_type_icon
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Activity Type Icon"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Activos"
+msgstr "Active"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Actualizar datos ISBN"
+msgstr "Update ISBN data"
+
+#. module: png_biblioteca
+#: model:res.groups,name:png_biblioteca.group_biblioteca_manager
+msgid "Administrador de Biblioteca"
+msgstr "Library Manager"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_search
+msgid "Agrupar por"
+msgstr "Group By"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_pivot
+msgid "Análisis Detallado"
+msgstr "Detailed Analysis"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_graph
+msgid "Análisis de Préstamos"
+msgstr "Loan Analysis"
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_art
+msgid "Arte"
+msgstr "Art"
+
+#. module: png_biblioteca
+#: model:ir.model,name:png_biblioteca.model_png_biblioteca_book_search_wizard
+msgid "Asistente de Búsqueda de Libros"
+msgstr "Book Search Assistant"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_attachment_count
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_attachment_count
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_attachment_count
+msgid "Attachment Count"
+msgstr "Attachment Count"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__author
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__author
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__search_author
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_search
+msgid "Autor"
+msgstr "Author"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_user_kanban
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: png_biblioteca
+#: model_terms:ir.actions.act_window,help:png_biblioteca.action_library_book
+msgid "Añade libros manualmente o impórtalos usando ISBN."
+msgstr "Add books manually or import them using ISBN."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__year
+msgid "Año"
+msgstr "Year"
+
+#. module: png_biblioteca
+#: model:ir.module.category,name:png_biblioteca.module_category_biblioteca
+#: model:ir.ui.menu,name:png_biblioteca.menu_biblioteca_root
+msgid "Biblioteca"
+msgstr "Library"
+
+#. module: png_biblioteca
+#: model:ir.actions.server,name:png_biblioteca.cron_update_overdue_loans_ir_actions_server
+msgid "Biblioteca: Actualizar Préstamos Vencidos"
+msgstr "Library: Update Overdue Loans"
+
+#. module: png_biblioteca
+#: model:ir.actions.server,name:png_biblioteca.cron_send_loan_reminders_ir_actions_server
+msgid "Biblioteca: Enviar Recordatorios de Devolución"
+msgstr "Library: Send Return Reminders"
+
+#. module: png_biblioteca
+#: model:res.groups,name:png_biblioteca.group_biblioteca_librarian
+msgid "Bibliotecario"
+msgstr "Librarian"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_search
+msgid "Buscar Libros"
+msgstr "Search Books"
+
+#. module: png_biblioteca
+#: model:ir.actions.act_window,name:png_biblioteca.action_book_search_wizard
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Buscar Libros en Open Library"
+msgstr "Search for books in Open Library"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Busque por título"
+msgstr "Search by title"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_book_search_wizard__state__search
+msgid "Búsqueda"
+msgstr "Search"
+
+#. module: png_biblioteca
+#: model:ir.model,name:png_biblioteca.model_png_biblioteca_loan_job
+msgid "CRON Jobs de Préstamos"
+msgstr "CRON Loan Jobs"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__books_count
+msgid "Cantidad de Libros"
+msgstr "Number of Books"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Cantidad de libros con fecha de devolución vencida."
+msgstr "Number of books with an expired return date."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Cantidad de libros que el usuario tiene actualmente."
+msgstr "Number of books the user currently owns."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__category_id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__category_id
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_kanban
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_search
+msgid "Categoría"
+msgstr "Category"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__suggested_category
+msgid "Categoría Sugerida"
+msgstr "Suggested Category"
+
+#. module: png_biblioteca
+#: model:ir.model,name:png_biblioteca.model_png_biblioteca_category
+msgid "Categoría de Biblioteca"
+msgstr "Library Category"
+
+#. module: png_biblioteca
+#: model:ir.actions.act_window,name:png_biblioteca.action_library_category
+#: model:ir.ui.menu,name:png_biblioteca.menu_biblioteca_categories
+msgid "Categorías"
+msgstr "Categories"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Cerrar"
+msgstr "Close"
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_science
+msgid "Ciencia"
+msgstr "Science"
+
+#. module: png_biblioteca
+#: model_terms:ir.actions.act_window,help:png_biblioteca.action_library_book
+msgid "Crea tu primer libro"
+msgstr "Create your first book"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__create_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__create_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__create_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__create_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__create_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__create_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__create_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__create_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__create_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__create_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__isbn
+msgid "Código ISBN-10 o ISBN-13 del libro"
+msgstr "ISBN-10 or ISBN-13 code of the book"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Código internacional normalizado de 10 o 13 dígitos sin guiones."
+msgstr "Standard international code of 10 or 13 digits without hyphens."
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_comics
+msgid "Cómics"
+msgstr "Comics"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__description
+msgid "Descripción"
+msgstr "Description"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid "Devolver"
+msgstr "Return"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_loan__state__returned
+msgid "Devuelto"
+msgstr "Returned"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Devuelto el"
+msgstr "Returned"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__email
+msgid ""
+"Dirección de correo electrónico del usuario para notificaciones y "
+"comunicaciones."
+msgstr "User email address for notifications and communications."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__display_name
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__display_name
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__display_name
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__display_name
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__display_name
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_book__state__available
+msgid "Disponible"
+msgstr "Available"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_search
+msgid "Disponibles"
+msgstr "Available"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__days_remaining
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Días Restantes"
+msgstr "Remaining Days"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__overdue_days
+msgid "Días de Retraso"
+msgstr "Days of Delay"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.pfield_png_biblioteca_loan__days_remaining
+msgid "Días restantes para la devolución (negativo si está vencido)"
+msgstr "Days remaining for return (negative if expired)"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__publisher
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_search
+msgid "Editorial"
+msgstr "Editorial"
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_education
+msgid "Educación"
+msgstr "Education"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Ej. Harry Potter y la Piedra Filosofal"
+msgstr "Example: Harry Potter and the Philosopher's Stone"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Ej. Iván..."
+msgstr "For example, Ivan..."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Ej: 9780747532743"
+msgstr "Example: 9780747532743"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Ej: 9788467041538"
+msgstr "Example: 9788467041538"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Ej: Editorial Planeta o Alfaguara"
+msgstr "Example: Editorial Planeta or Alfaguara"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Ej: Harry Potter"
+msgstr "\tExample: Harry Potter"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Ej: J.K. Rowling"
+msgstr "Example: J.K. Rowling"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Ej: J.K. Rowling o Miguel de Cervantes"
+msgstr "Examples: J.K. Rowling or Miguel de Cervantes"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Ej: LIB-2025-001"
+msgstr "Example: LIB-2025-001"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_category
+msgid "Ej: Novela Histórica, Ciencia Ficción, Infantil..."
+msgstr "Examples: Historical Fiction, Science Fiction, Children's Fiction..."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Ej: Número de páginas del libro"
+msgstr "Example: Number of pages in the book"
+
+#. module: png_biblioteca
+#: model:ir.model.constraint,message:png_biblioteca.constraint_png_biblioteca_user_email_unique
+msgid "El correo electrónico ya está registrado en otro usuario."
+msgstr "The email address is already registered to another user."
+
+#. module: png_biblioteca
+#: model:ir.model.constraint,message:png_biblioteca.constraint_png_biblioteca_user_library_card_unique
+msgid "El número de carnet ya está asignado a otro usuario."
+msgstr "The card number is already assigned to another user."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Empresa encargada de la edición y distribución."
+msgstr "Company in charge of editing and distribution."
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_loan__state__ongoing
+msgid "En Curso"
+msgstr "In Progress"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_search
+msgid "En curso"
+msgstr "In progress"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_loan__state__late_returned
+msgid "Entregado Tarde"
+msgstr "Delivered Late"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Escriba el nombre del alumno"
+msgstr "Write the student's name"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book_search_wizard__search_author
+msgid "Escriba el nombre del autor para filtrar los resultados de búsqueda."
+msgstr "Enter the author's name to filter search results."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book_search_wizard__search_title
+msgid "Escriba el título completo o palabras clave del libro que desea buscar."
+"Escriba el título completo o palabras clave del libro que desea buscar."
+msgstr "Enter the full title or keywords of the book you want to search for."
+
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__state
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__state
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Estado"
+msgstr "State"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid "Estado de devolución"
+msgstr "Return status"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Estado del Tiempo"
+msgstr "\tTime Status"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Estadísticas de Préstamos"
+msgstr "Loan Statistics"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_search
+msgid "Este Mes"
+msgstr "\tThis Month"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_user__user_type__student
+msgid "Estudiante"
+msgstr "\tStudent"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Extender 7 días"
+msgstr "\tExtend by 7 days"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__actual_return_date
+msgid "Fecha Real de Devolución"
+msgstr "\tActual Return Date"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__return_date
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Fecha de Devolución"
+msgstr "Return Date"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__loan_date
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Fecha de Préstamo"
+msgstr "Loan Date"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__publication_date
+msgid "Fecha de Publicación"
+msgstr "Publication Date"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Fecha de entrega del libro"
+msgstr "\tBook delivery date"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Fecha de lanzamiento o impresión de esta edición específica."
+msgstr "\tRelease or printing date of this specific edition."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__loan_date
+msgid "Fecha en la que el alumno debe entregar el libro físicamente."
+msgstr "\tDate on which the student must physically hand in the book."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Fecha límite de devolución"
+msgstr "Return deadline"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__return_date
+msgid "Fecha límite en la que el alumno debe devolver el libro."
+msgstr "Deadline by which the student must return the book."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Fechas"
+msgstr "Dates"
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_fiction
+msgid "Ficción"
+msgstr "Fiction"
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_philosophy
+msgid "Filosofía"
+msgstr "Philosophy"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_follower_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_follower_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_follower_ids
+msgid "Followers"
+msgstr "Followers"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_partner_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_partner_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Followers (Partners)"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__activity_type_icon
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__activity_type_icon
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font awesome icon e.g. fa-tasks"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Formato visual del ISBN con guiones estándar generado automáticamente."
+msgstr ""
+"Visual format of the ISBN with standard hyphens automatically generated."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__image
+msgid "Foto de Usuario"
+msgstr "User Photo"
+
+#. module: png_biblioteca
+#: model:ir.module.category,description:png_biblioteca.module_category_biblioteca
+msgid "Gestión de Biblioteca Escolar"
+msgstr "School Library Management"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_search
+msgid "Group By"
+msgstr "Group By"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Género o clasificación temática del libro."
+msgstr "Genre or thematic classification of the book."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__has_message
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__has_message
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__has_message
+msgid "Has Message"
+msgstr "Has Message"
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_history
+msgid "Historia"
+msgstr "History"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Historial total de libros prestados a este usuario."
+msgstr "Total history of books loaned to this user."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__id
+msgid "ID"
+msgstr "ID"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__cover_id
+msgid "ID de Portada (OL)"
+msgstr "Cover ID (OL)"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__isbn
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__isbn
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__search_isbn
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "ISBN"
+msgstr "ISBN"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__isbn_formatted
+msgid "ISBN Formateado"
+msgstr "\tISBN Formatted"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__isbn_formatted
+msgid "ISBN con guiones según estándar"
+msgstr "ISBN with hyphens according to standard"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_exception_icon
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_exception_icon
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_exception_icon
+msgid "Icon"
+msgstr "Icon"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__activity_exception_icon
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__activity_exception_icon
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icon to indicate an exception activity."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Identificación"
+msgstr "ID"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Identificación y Contacto"
+msgstr "Identification and Contact"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__message_needaction
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__message_needaction
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "If checked, new messages require your attention."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__message_has_error
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__message_has_error
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "If checked, some messages have a delivery error."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__image_128
+msgid "Imagen 128"
+msgstr "\tImage 128"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__image_128
+msgid "Imagen del libro"
+msgstr "Image from the book"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Imprimir Ticket"
+msgstr "Print Ticket"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Indica si el ejemplar se encuentra en estantería o en préstamo."
+msgstr "Indicate whether the copy is on the shelf or on loan."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__user_type
+msgid ""
+"Indica si el usuario es estudiante o profesor dentro del sistema de "
+"biblioteca."
+msgstr ""
+"\tIndicates whether the user is a student or teacher within the library "
+"system."
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_children
+msgid "Infantil"
+msgstr "Children's"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Información Básica"
+msgstr "Basic Information"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__full_info
+msgid "Información Completa"
+msgstr "Complete Information"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Información Principal"
+msgstr "Main Information"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Información completa y metadatos del usuario."
+msgstr "Complete user information and metadata."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book_search_wizard__search_isbn
+msgid ""
+"Introduzca el código ISBN de 10 o 13 dígitos. Es el método más preciso para "
+"encontrar un libro específico."
+msgstr ""
+"Enter the 10- or 13-digit ISBN code. This is the most accurate way to find "
+"a specific book."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_is_follower
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_is_follower
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_is_follower
+msgid "Is Follower"
+msgstr "Is Follower"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__write_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__write_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__write_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__write_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__write_uid
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__write_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__write_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__write_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__write_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__write_date
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: png_biblioteca
+#: model:ir.model,name:png_biblioteca.model_png_biblioteca_book
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__book_id
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_search
+msgid "Libro"
+msgstr "Book"
+
+#. module: png_biblioteca
+#: model:ir.actions.act_window,name:png_biblioteca.action_library_book
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__book_ids
+#: model:ir.ui.menu,name:png_biblioteca.menu_biblioteca_books
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_category
+msgid "Libros"
+msgstr "Books"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_category_kanban
+msgid "Libros en catálogo"
+msgstr "Books in catalog"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Marcar como Devuelto"
+msgstr "Mark as Returned"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_search
+msgid "Mes de Préstamo"
+msgstr "\tMark as Returned"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_has_error
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_has_error
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_has_error
+msgid "Message Delivery error"
+msgstr "Message Delivery error"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__my_activity_date_deadline
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__my_activity_date_deadline
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "My Activity Deadline"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_date_deadline
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_date_deadline
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Next Activity Deadline"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_summary
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_summary
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_summary
+msgid "Next Activity Summary"
+msgstr "Next Activity Summary"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_type_id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_type_id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_type_id
+msgid "Next Activity Type"
+msgstr "Next Activity Type"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__name
+msgid "Nombre"
+msgstr "Name"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__full_info
+msgid "Nombre - Carnet (Tipo)"
+msgstr "Name - ID Card (Type)"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Nombre completo del autor o autores del libro."
+msgstr "Full name of the author or authors of the book."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__name
+msgid "Nombre completo del usuario registrado en la biblioteca."
+msgstr "Full name of the user registered in the library."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_category__name
+msgid "Nombre de la Categoría"
+msgstr "Category Name"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_category__name
+msgid "Nombre de la categoría a la que pertenece el libro."
+msgstr "Name of the category to which the book belongs."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Nombre del Usuario"
+msgstr "Username"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_needaction_counter
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_needaction_counter
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Number of Actions"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__message_has_error_counter
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__message_has_error_counter
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__message_has_error_counter
+msgid "Number of errors"
+msgstr "Number of errors"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__message_needaction_counter
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__message_needaction_counter
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Number of messages requiring action"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__message_has_error_counter
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__message_has_error_counter
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Number of messages with delivery error"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__library_card
+msgid "Número de Carnet"
+msgstr "\tID Number"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__overdue_days
+msgid "Número de días de retraso en la devolución"
+msgstr "Number of days delay in return"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__library_card
+msgid "Número de identificación del usuario asignado por la biblioteca."
+msgstr "\tLibrary-assigned user identification number."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Número de identificación único del usuario."
+msgstr "Unique user identification number."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Número total de páginas"
+msgstr "\tTotal number of pages"
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_poetry
+msgid "Poesía"
+msgstr "Poetry"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_book_search_wizard__search_type__author
+msgid "Por Autor"
+msgstr "By Author"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_book_search_wizard__search_type__isbn
+msgid "Por ISBN"
+msgstr "\tBy ISBN"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_book_search_wizard__search_type__title
+msgid "Por Título"
+msgstr "By Title"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "Por favor, devuelva el libro antes de la fecha de vencimiento."
+msgstr "Please return the book before the due date."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__image
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Portada"
+msgstr "Cover"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_book__state__borrowed
+msgid "Prestado"
+msgstr "\tOn Loan"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_book_search
+msgid "Prestados"
+msgstr "Loans"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_user__user_type__teacher
+msgid "Profesor"
+msgstr "Teacher"
+
+#. module: png_biblioteca
+#: model:ir.model,name:png_biblioteca.model_png_biblioteca_loan
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Préstamo"
+msgstr "Loan"
+
+#. module: png_biblioteca
+#: model:ir.actions.act_window,name:png_biblioteca.action_library_loan
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__loan_ids
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__loan_ids
+#: model:ir.ui.menu,name:png_biblioteca.menu_biblioteca_loans
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Préstamos"
+msgstr "Loans"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__active_loans_count
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__active_loans_count
+msgid "Préstamos Activos"
+msgstr "\tActive Loans"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__overdue_loans_count
+msgid "Préstamos Vencidos"
+msgstr "\tOverdue Loans"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__is_due_soon
+msgid "Próximo a Vencer"
+msgstr "\tSoon to Expire"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__pages
+msgid "Páginas"
+msgstr "Pages"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__activity_user_id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__activity_user_id
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__activity_user_id
+msgid "Responsible User"
+msgstr "Responsible User"
+
+#. module: png_biblioteca
+#: model:ir.model,name:png_biblioteca.model_png_biblioteca_book_search_result
+msgid "Resultado de Búsqueda de Libro"
+msgstr "\tBook Search Results"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__result_ids
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_book_search_wizard__state__results
+msgid "Resultados"
+msgstr "\tResults"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Se generará automáticamente..."
+msgstr "\tIt will be generated automatically..."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Selecciona una categoría (opcional)"
+msgstr "\tSelect a category (optional)"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Seleccione el alumno registrado en el sistema."
+msgstr "Select the student registered in the system."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book_search_wizard__search_type
+msgid ""
+"Seleccione el criterio principal para buscar el libro en la base de datos "
+"externa."
+msgstr ""
+"\tSelect the primary criterion to search for the book in the external "
+"database."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_form
+msgid "Seleccione el libro asociándolo por su título."
+msgstr "Select the book by associating it with its title."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Seleccione la fecha de edición"
+msgstr "\tSelect the edition date"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Seleccione una categoría..."
+msgstr "\tSelect a category..."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "Sin ISBN"
+msgstr "\tNo ISBN"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Sin descripción disponible"
+msgstr "\tNo description available"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Sinopsis"
+msgstr "Synopsis"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__state
+msgid "State"
+msgstr "State"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__activity_state
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__activity_state
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+
+#. module: png_biblioteca
+#: model:png_biblioteca.category,name:png_biblioteca.category_technology
+msgid "Tecnología"
+msgstr "Technology"
+
+#. module: png_biblioteca
+#: model:ir.actions.report,name:png_biblioteca.action_report_loan_ticket
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "Ticket de Préstamo"
+msgstr "Loan Ticket"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__search_type
+msgid "Tipo de Búsqueda"
+msgstr "Search Type"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__user_type
+msgid "Tipo de Usuario"
+msgstr "User Type"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Tipo de categoría del usuario de la biblioteca."
+msgstr "Library user category type."
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Total"
+msgstr "Total"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__total_loans_count
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_user__total_loans_count
+msgid "Total de Préstamos"
+msgstr "Total Loans"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__is_due_soon
+msgid "True si el préstamo vence en los próximos 3 días"
+msgstr "True if the loan matures within the next 3 days"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_book__activity_exception_decoration
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_loan__activity_exception_decoration
+#: model:ir.model.fields,help:png_biblioteca.field_png_biblioteca_user__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type of the exception activity on record."
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book__name
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__title
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_wizard__search_title
+msgid "Título"
+msgstr "Title"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+msgid "Título del Libro"
+msgstr "Book Title"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__cover_url
+msgid "URL de Portada (Google/Directa)"
+msgstr "Homepage URL (Google/Direct)"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_loan__user_id
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_search
+msgid "Usuario"
+msgstr "User"
+
+#. module: png_biblioteca
+#: model:ir.model,name:png_biblioteca.model_png_biblioteca_user
+#: model:res.groups,name:png_biblioteca.group_biblioteca_user
+msgid "Usuario de Biblioteca"
+msgstr "Library User"
+
+#. module: png_biblioteca
+#: model:ir.actions.act_window,name:png_biblioteca.action_library_user
+#: model:ir.ui.menu,name:png_biblioteca.menu_biblioteca_users
+msgid "Usuarios"
+msgstr "Users"
+
+#. module: png_biblioteca
+#: model:ir.model.fields.selection,name:png_biblioteca.selection__png_biblioteca_loan__state__overdue
+msgid "Vencido"
+msgstr "Overdue"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_search
+msgid "Vencidos"
+msgstr "Overdue"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_book
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "Ver Préstamos"
+msgstr "View Loans"
+
+#. module: png_biblioteca
+#: model:ir.model.fields,field_description:png_biblioteca.field_png_biblioteca_book_search_result__wizard_id
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_loan_kanban
+msgid "días"
+msgstr "days"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_form_library_user
+msgid "ejemplo@correo.com"
+msgstr "example@email.com"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_library_user_kanban
+msgid "préstamo(s)"
+msgstr "loan(s)"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.report_loan_ticket_template
+msgid "¡Gracias por usar la Biblioteca Escolar!"
+msgstr "Thank you for using the School Library!"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "← Nueva Búsqueda"
+msgstr "← New Search"
+
+#. module: png_biblioteca
+#: model_terms:ir.ui.view,arch_db:png_biblioteca.view_book_search_wizard_form
+msgid "🔍 Buscar"
+msgstr "🔍 Search"
+
+#. module: png_biblioteca
+#: model:ir.ui.menu,name:png_biblioteca.menu_book_search_wizard
+msgid "🔍 Búsqueda de libros"
+msgstr "🔍 Book Search"

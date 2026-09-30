@@ -1,0 +1,71 @@
+<odoo>
+    <record id="action_report_loan_ticket" model="ir.actions.report">
+        <field name="name">Ticket de Préstamo</field>
+        <field name="model">png_biblioteca.loan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">png_biblioteca.report_loan_ticket_template</field>
+        <field name="report_file">png_biblioteca.report_loan_ticket_template</field>
+        <field name="print_report_name">'Ticket_%s' % (object.book_id.name)</field>
+        <field name="binding_model_id" ref="model_png_biblioteca_loan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_loan_ticket_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="text-center mb-5" style="border-bottom: 2px solid black;">
+                            <h2 style="padding-bottom: 20px;">Ticket de Préstamo</h2>
+                        </div>
+
+                        <div class="row mt-5 mb-5">
+                            <div class="col-6">
+                                <div class="mb-4">
+                                    <strong>Lector:</strong><br/>
+                                    <span t-field="o.user_id.name"/>
+                                </div>
+                                <div>
+                                    <strong>Carnet:</strong><br/>
+                                    <span t-field="o.user_id.library_card"/>
+                                </div>
+                            </div>
+                            <div class="col-6 text-end">
+                                <div class="mb-4">
+                                    <strong>Fecha de Préstamo:</strong><br/>
+                                    <span t-field="o.loan_date" t-options='{"widget": "date"}'/>
+                                </div>
+                                <div>
+                                    <strong>Vencimiento:</strong><br/>
+                                    <span t-field="o.return_date" t-options='{"widget": "date"}' class="text-danger fw-bold"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered mt-5">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="p-3">Libro</th>
+                                    <th class="text-center p-3">ISBN</th>
+                                    <th class="text-center p-3">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-3"><span t-field="o.book_id.name"/></td>
+                                    <td class="text-center p-3"><span t-field="o.book_id.isbn"/></td>
+                                    <td class="text-center p-3"><span t-field="o.state"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="mt-5 p-5 text-center" style="border: 1px dashed #666; border-radius: 10px;">
+                            <p class="mb-4">Por favor, devuelva el libro antes de la fecha de vencimiento.</p>
+                            <h4 class="mt-2">¡Gracias por usar la Biblioteca Escolar!</h4>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
