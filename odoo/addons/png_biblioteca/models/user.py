@@ -63,6 +63,16 @@ class User(models.Model):
     # Un usuario puede tener varios préstamos
     loan_ids = fields.One2many('png_biblioteca.loan', 'user_id', string='Préstamos')
 
+    # Solicitudes de préstamo hechas desde la app
+    request_ids = fields.One2many('png_biblioteca.loan.request', 'user_id', string='Solicitudes')
+
+    # Usuario de Odoo (grupo Portal) con el que entra en la app
+    res_user_id = fields.Many2one('res.users', string='Usuario de la App', readonly=True,
+                                  copy=False, ondelete='set null', index=True)
+
+    # Indica si ahora mismo puede entrar en la app
+    app_access = fields.Boolean(string='Acceso a la App', compute='_compute_app_access')
+
     # =========================
     # Campos computados
     # =========================
@@ -87,6 +97,7 @@ class User(models.Model):
     _sql_constraints = [
         ('email_unique', 'unique(email)', 'El correo electrónico ya está registrado en otro usuario.'),
         ('library_card_unique', 'unique(library_card)', 'El número de carnet ya está asignado a otro usuario.'),
+        ('res_user_id_unique', 'unique(res_user_id)', 'El usuario de la app ya está asignado a otro usuario de biblioteca.'),
     ]
 
     # =========================
@@ -120,6 +131,15 @@ class User(models.Model):
                 user.user_type,
                 user.email
             )
+
+    @api.depends('res_user_id', 'res_user_id.active')
+    def _compute_app_access(self):
+        """
+        Tiene acceso a la app si tiene un usuario de acceso y está activo.
+        """
+
+        for user in self:
+            user.app_access = bool(user.res_user_id.sudo().active)
 
     def _inverse_full_info(self):
         """
@@ -196,3 +216,39 @@ class User(models.Model):
 
         self.ensure_one()
         return UserHelper.get_loans_action(self)
+
+    def action_open_app_access_wizard(self):
+        """
+        Botón: Abre el asistente para dar acceso a la app (o cambiar la contraseña).
+
+        Returns:
+            dict: Acción que abre el asistente en una ventana emergente.
+        """
+
+        self.ensure_one()
+        return {
+            'name': 'Acceso a la App',
+            'type': 'ir.actions.act_window',
+            'res_model': 'png_biblioteca.app.access.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_library_user_id': self.id,
+                'default_login': self.res_user_id.sudo().login or self.email,
+            },
+        }
+
+    def action_revoke_app_access(self):
+        """
+        Botón: Quita el acceso a la app.
+
+        Archiva el usuario de acceso y borra sus tokens, así que la app deja de funcionar
+        al momento. Se puede volver a dar acceso con el mismo usuario.
+        """
+
+        for user in self.filtered('res_user_id'):
+            access_user = user.res_user_id.sudo()
+            self.env['png_biblioteca.api.token'].sudo().search([('user_id', '=', access_user.id)]).unlink()
+            access_user.active = False
+            user.message_post(body="📱 Acceso a la app retirado.", message_type='notification')
+        return True
