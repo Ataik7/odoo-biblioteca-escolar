@@ -11,6 +11,7 @@
         # Seguridad
         "security/security_groups.xml",
         "security/ir.model.access.csv",
+        "security/portal_rules.xml",
 
         # Menús
         "views/menus.xml",

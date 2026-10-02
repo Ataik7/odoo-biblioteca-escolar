@@ -15,3 +15,13 @@ access_loan_manager,loan.manager,model_png_biblioteca_loan,group_biblioteca_mana
 access_cat_manager,cat.manager,model_png_biblioteca_category,group_biblioteca_manager,1,1,1,1
 access_user_manager,user.manager,model_png_biblioteca_user,group_biblioteca_manager,1,1,1,1
 access_job_manager,job.manager,model_png_biblioteca_loan_job,group_biblioteca_manager,1,0,0,1
+access_book_portal,book.portal,model_png_biblioteca_book,base.group_portal,1,0,0,0
+access_cat_portal,cat.portal,model_png_biblioteca_category,base.group_portal,1,0,0,0
+access_loan_portal,loan.portal,model_png_biblioteca_loan,base.group_portal,1,0,0,0
+access_user_portal,user.portal,model_png_biblioteca_user,base.group_portal,1,0,0,0
+access_request_portal,request.portal,model_png_biblioteca_loan_request,base.group_portal,1,0,0,0
+access_request_user,request.user,model_png_biblioteca_loan_request,group_biblioteca_user,1,0,0,0
+access_request_librarian,request.librarian,model_png_biblioteca_loan_request,group_biblioteca_librarian,1,1,1,0
+access_request_manager,request.manager,model_png_biblioteca_loan_request,group_biblioteca_manager,1,1,1,1
+access_token_manager,token.manager,model_png_biblioteca_api_token,group_biblioteca_manager,1,0,0,1
+access_app_wizard_librarian,app.wizard.librarian,model_png_biblioteca_app_access_wizard,group_biblioteca_librarian,1,1,1,1
