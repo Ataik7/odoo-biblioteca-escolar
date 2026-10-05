@@ -26,6 +26,8 @@
         "views/category_views.xml",
         "views/wizard_views.xml",
         "views/loan_job_views.xml",
+        "views/loan_request_views.xml",
+        "views/app_access_wizard_views.xml",
 
         # Datos
         "data/categories.xml",

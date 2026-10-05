@@ -2,7 +2,7 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError # type: ignore
 from ..validators.user_validator import UserValidator
 from ..helpers.user_helper import UserHelper
-
+from markupsafe import Markup  # type: ignore
 
 class User(models.Model):
     """
@@ -66,12 +66,19 @@ class User(models.Model):
     # Solicitudes de préstamo hechas desde la app
     request_ids = fields.One2many('png_biblioteca.loan.request', 'user_id', string='Solicitudes')
 
+    # =========================
+    # Acceso a la App
+    # =========================
+
     # Usuario de Odoo (grupo Portal) con el que entra en la app
     res_user_id = fields.Many2one('res.users', string='Usuario de la App', readonly=True,
                                   copy=False, ondelete='set null', index=True)
 
     # Indica si ahora mismo puede entrar en la app
     app_access = fields.Boolean(string='Acceso a la App', compute='_compute_app_access')
+
+    # La contraseña la ha puesto el bibliotecario: el usuario debe cambiarla al entrar en la app
+    app_password_temporary = fields.Boolean(string='Contraseña Temporal', readonly=True, copy=False)
 
     # =========================
     # Campos computados
@@ -250,5 +257,5 @@ class User(models.Model):
             access_user = user.res_user_id.sudo()
             self.env['png_biblioteca.api.token'].sudo().search([('user_id', '=', access_user.id)]).unlink()
             access_user.active = False
-            user.message_post(body="📱 Acceso a la app retirado.", message_type='notification')
+            user.message_post(body=Markup("🚫 <strong>Acceso a la app retirado</strong>"), message_type='notification')
         return True

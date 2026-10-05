@@ -1,0 +1,107 @@
+<odoo>
+    <!-- Vista de lista -->
+    <record id="view_loan_request_tree" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.request.tree</field>
+        <field name="model">png_biblioteca.loan.request</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'pending'"
+                  decoration-muted="state in ('rejected', 'cancelled')">
+                <field name="request_date"/>
+                <field name="user_id"/>
+                <field name="book_id"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'pending'"
+                       decoration-success="state == 'approved'"
+                       decoration-danger="state == 'rejected'"
+                       decoration-muted="state == 'cancelled'"/>
+                <field name="loan_id" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Formulario -->
+    <record id="view_loan_request_form" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.request.form</field>
+        <field name="model">png_biblioteca.loan.request</field>
+        <field name="arch" type="xml">
+            <form string="Solicitud de Préstamo">
+                <header>
+                    <button name="action_approve" string="Aprobar" type="object"
+                            class="btn-primary"
+                            invisible="state != 'pending'"
+                            groups="png_biblioteca.group_biblioteca_librarian"/>
+                    <button name="action_reject" string="Rechazar" type="object"
+                            invisible="state != 'pending'"
+                            groups="png_biblioteca.group_biblioteca_librarian"
+                            confirm="¿Rechazar esta solicitud? Si quieres que el usuario vea el motivo, escríbelo antes."/>
+                    <field name="state" widget="statusbar" statusbar_visible="pending,approved"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id" readonly="state != 'pending'"
+                                   options="{'no_create': True}"/>
+                            <field name="book_id" readonly="state != 'pending'"
+                                   domain="[('state', '=', 'available')]"
+                                   options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="request_date"/>
+                            <field name="loan_id" invisible="not loan_id"/>
+                        </group>
+                    </group>
+                    <group string="Motivo del Rechazo" invisible="state not in ('pending', 'rejected')">
+                        <field name="rejection_reason" nolabel="1" colspan="2"
+                               readonly="state != 'pending'"
+                               placeholder="Opcional: explica al usuario por qué se rechaza la solicitud"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Búsqueda -->
+    <record id="view_loan_request_search" model="ir.ui.view">
+        <field name="name">png.biblioteca.loan.request.search</field>
+        <field name="model">png_biblioteca.loan.request</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id"/>
+                <field name="book_id"/>
+                <filter string="Pendientes" name="pending" domain="[('state', '=', 'pending')]"/>
+                <filter string="Aprobadas" name="approved" domain="[('state', '=', 'approved')]"/>
+                <filter string="Rechazadas" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter string="Estado" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Usuario" name="group_user" context="{'group_by': 'user_id'}"/>
+                    <filter string="Libro" name="group_book" context="{'group_by': 'book_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Acción: al abrir el menú se muestran las pendientes -->
+    <record id="action_loan_request" model="ir.actions.act_window">
+        <field name="name">Solicitudes</field>
+        <field name="res_model">png_biblioteca.loan.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_pending': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No hay solicitudes pendientes</p>
+            <p>Las solicitudes que hagan los usuarios desde la app aparecerán aquí.</p>
+        </field>
+    </record>
+
+    <!-- Menú (entre Préstamos y Categorías) -->
+    <menuitem id="menu_loan_request"
+              name="Solicitudes"
+              parent="menu_biblioteca_root"
+              action="action_loan_request"
+              groups="group_biblioteca_librarian"
+              sequence="35"/>
+</odoo>

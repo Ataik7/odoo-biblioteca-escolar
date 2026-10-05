@@ -5,6 +5,22 @@
         <field name="model">png_biblioteca.user</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_open_app_access_wizard" string="Dar acceso a la app"
+                            type="object" class="btn-primary"
+                            invisible="app_access"
+                            groups="png_biblioteca.group_biblioteca_librarian"/>
+                    <button name="action_open_app_access_wizard" string="Cambiar contraseña de la app"
+                            type="object"
+                            invisible="not app_access"
+                            groups="png_biblioteca.group_biblioteca_librarian"/>
+                    <button name="action_revoke_app_access" string="Quitar acceso a la app"
+                            type="object"
+                            invisible="not app_access"
+                            groups="png_biblioteca.group_biblioteca_librarian"
+                            confirm="El usuario dejará de poder entrar en la app. ¿Continuar?"/>
+                    <field name="app_access" invisible="1"/>
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_view_loans" string="Ver Préstamos" type="object"
@@ -40,6 +56,8 @@
                             <field name="email" placeholder="ejemplo@correo.com" />
                             <field name="full_info" readonly="1"
                                 help="Información completa y metadatos del usuario." />
+                            <field name="res_user_id" invisible="not app_access"/>
+                            <field name="app_password_temporary" invisible="not app_access"/>
                         </group>
                         <group string="Estadísticas de Préstamos">
                             <field name="active_loans_count"
@@ -63,6 +81,19 @@
                                         decoration-info="state == 'ongoing'"
                                         decoration-success="state == 'returned'"
                                         decoration-danger="state == 'overdue'" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Solicitudes">
+                            <field name="request_ids" readonly="1">
+                                <tree>
+                                    <field name="request_date"/>
+                                    <field name="book_id"/>
+                                    <field name="state" widget="badge"
+                                           decoration-info="state == 'pending'"
+                                           decoration-success="state == 'approved'"
+                                           decoration-danger="state == 'rejected'"
+                                           decoration-muted="state == 'cancelled'"/>
                                 </tree>
                             </field>
                         </page>
